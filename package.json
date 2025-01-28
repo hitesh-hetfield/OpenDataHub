@@ -1,0 +1,23 @@
+{
+  "name": "decmkt",
+  "version": "1.0.0",
+  "description": "Decentralized Marketplace Datasets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hitesh_hetfield",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^5.2.0",
+    "@openzeppelin/hardhat-upgrades": "^3.9.0",
+    "dotenv": "^16.4.7",
+    "mime-types": "^2.1.35",
+    "papaparse": "^5.5.1",
+    "pinata-web3": "^0.5.4"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.18"
+  }
+}
