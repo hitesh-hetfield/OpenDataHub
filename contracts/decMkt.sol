@@ -22,13 +22,13 @@ contract decMKT is UUPSUpgradeable, OwnableUpgradeable {
     mapping(string => Dataset)  public  datasets;
     string []                   private _ipfsHash;
 
-    function initialize() initializer onlyOwner public {
+    function initialize() initializer public {
         contractOwner = msg.sender;
         __UUPSUpgradeable_init();
         __Ownable_init(msg.sender);
     }
 
-    function registerDataset(
+    function registerDataset (
         string  memory  _datasetName,
         string  memory  datasetHash
     ) public virtual payable {

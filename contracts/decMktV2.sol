@@ -8,19 +8,14 @@ contract decMKTV2 is decMKT {
     uint256 private  _registrationPercent;
     uint256 private  _sellingPercent;
 
-    // function reinitialize() reinitializer(2) onlyOwner public {
-    //     _registrationPercent = 10; // in percentage
-    //     _sellingPercent      = 10; // in percentage
-    // }
-
-    function initializeV2() reinitializer(2) onlyOwner public {
+    function initializeV2() reinitializer(2) public {
         _registrationPercent = 10; // in percentage
         _sellingPercent      = 10; // in percentage
     }
 
     // everytime someone registers a dataset the user pays a registration fee    
 
-    function registerDataset(
+    function registerDatasetV2 (
         string  memory  _datasetName,
         string  memory  datasetHash,
         uint256         _sellingPrice
@@ -57,6 +52,7 @@ contract decMKTV2 is decMKT {
 
         datasets[datasetHash].seller = msg.sender;
         datasets[datasetHash].isListed = false;
+        datasets[datasetHash].sellingPrice = sellingPrice;
 
         payable(datasets[datasetHash].owner).transfer(sellingPrice);
     }

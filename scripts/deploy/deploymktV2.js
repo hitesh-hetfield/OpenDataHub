@@ -31,11 +31,7 @@ async function deployMkt() {
     const mktV2 = await ethers.getContractFactory("decMKTV2");
     const MKTV2 = await upgrades.upgradeProxy(
         PROXY,
-        mktV2,
-        {
-            kind: "uups",
-            initializer: "initializeV2"
-        }
+        mktV2
     );
 
     await MKTV2.waitForDeployment();
@@ -45,22 +41,6 @@ async function deployMkt() {
         address: newImpAddress,
         constructorArguments: []
     });
-
-    // await hre.run("verify:verify", {
-    //     address: proxyAddress,
-    //     constructorArguments: []
-    // });
-
-    // const decMktAddress = {
-    //     proxyAddress: MKT.target,
-    //     implementationAddress: impAddress,
-    //     network: networkName
-    // };
-
-    // fs.writeFileSync(
-    //     filepath,
-    //     JSON.stringify(decMktAddress, null, 2)
-    // );
 
 }
 

@@ -3,8 +3,8 @@ const hre = require("hardhat");
 
 (async () => {
 
-        const filePath = "D:/Data Science/dataframe.csv";
-        const fileName = "Sample Dataset 2";
+        const filePath = "D:/Data Science/PROJECTS/Statistical Analysis Using Python/scores.csv";
+        const fileName = "Scores";
         const sellingPrice = hre.ethers.parseEther("5", 18);
 
         const result = await uploadAndRegister(filePath, fileName, sellingPrice);

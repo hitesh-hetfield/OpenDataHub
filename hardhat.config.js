@@ -26,6 +26,11 @@ module.exports = {
     localhost: {
       url: "http://localhost:8545",
       chainId: 31337
+    },
+    bsc: {
+      url: "https://bsc-testnet-rpc.publicnode.com",
+      chainId: 97,
+      accounts: account_pvt_key
     }
   },
   etherscan: {
@@ -33,6 +38,7 @@ module.exports = {
       thunder: process.env.THUNDER_API_KEY !== undefined ? [process.env.THUNDER_API_KEY] : [],
       qa: process.env.THUNDER_API_KEY !== undefined ? [process.env.THUNDER_API_KEY] : [],
       amoy: process.env.POLYGON_API_KEY !== undefined ? [process.env.POLYGON_API_KEY] : [],
+      bsc: process.env.BSC_API_KEY !== undefined ? [process.env.BSC_API_KEY] : []
     },
     customChains: [
       {
@@ -58,6 +64,14 @@ module.exports = {
           apiURL: "https://contract.evm.qa.5ire.network/5ire/verify",
           browserURL: "https://scan.qa.5ire.network",
         },
+      },
+      {
+        network: "bsc",
+        chainId: 97,
+        urls: {
+          apiURL: "https://api-testnet.bscscan.com/api",
+          browserURL: "https://testnet.bscscan.com/"
+        }
       }
     ]
   }

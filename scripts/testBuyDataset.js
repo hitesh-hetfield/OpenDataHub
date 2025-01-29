@@ -20,16 +20,16 @@ async function buyDataset() {
         // const contractInstance = await connectToContract();
         // const contractAddress = contractInstance.target;
 
-        const contractAddress = "0x620acBC26574BA4e16bc9dd808679Ec627FD29ae";
+        const contractAddress = ""; // insert proxy contract address
 
         const contract = new ethers.Contract(contractAddress, _abi, provider);
         const contractWithUser = contract.connect(user);
         // console.log(contract);
 
-        const buyingPrice = ethers.parseEther("6", 18);
+        const buyingPrice = ethers.parseEther("15", 18);
 
         const buyTx = await contractWithUser.buyDataset(
-            "bafkreibra3ilac3sqjoy7mkglbssjd6z6jcp6xl6lbyuxqvxbnse63vh7a",
+            "", // insert dataset hash
             { value: buyingPrice }
         );
 
